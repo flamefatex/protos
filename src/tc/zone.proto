@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package flamefatex.tc;
+option go_package = "github.com/flamefatex/protos/goout/tc";
+
+import "google/protobuf/timestamp.proto";
+
+enum ZoneType {
+    ZONE_TYPE_UNSPECIFIED = 0;
+    ZONE_TYPE_ACCESS = 1;
+    ZONE_TYPE_PARSE = 2;
+}
+
+message Zone {
+    int32 id = 1;
+    string name = 2;
+    ZoneType type = 3;
+    google.protobuf.Timestamp create_time = 4;
+    google.protobuf.Timestamp update_time = 5;
+}

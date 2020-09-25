@@ -1,0 +1,124 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "tcapi/v1/zone.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/zone/all": {
+      "get": {
+        "operationId": "ZoneService_All",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ZoneAllResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "ZONE_TYPE_UNSPECIFIED",
+              "ZONE_TYPE_ACCESS",
+              "ZONE_TYPE_PARSE"
+            ],
+            "default": "ZONE_TYPE_UNSPECIFIED"
+          }
+        ],
+        "tags": [
+          "ZoneService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "tcZoneType": {
+      "type": "string",
+      "enum": [
+        "ZONE_TYPE_UNSPECIFIED",
+        "ZONE_TYPE_ACCESS",
+        "ZONE_TYPE_PARSE"
+      ],
+      "default": "ZONE_TYPE_UNSPECIFIED"
+    },
+    "tcapiv1Zone": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/tcZoneType"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ZoneAllResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/tcapiv1Zone"
+          }
+        }
+      }
+    }
+  }
+}
