@@ -6,6 +6,7 @@ option go_package = "github.com/flamefatex/protos/goout/tcapi/v1";
 import  "google/api/annotations.proto";
 import  "tc/zone.proto";
 
+
 service ZoneService {
     rpc All (ZoneAllRequest) returns (ZoneAllResponse) {
         option (google.api.http) = {

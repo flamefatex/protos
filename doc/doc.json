@@ -100,144 +100,6 @@
       "services": []
     },
     {
-      "name": "tcapi/v1/zone.proto",
-      "description": "",
-      "package": "flamefatex.tcapi.v1",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": true,
-      "enums": [],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "Zone",
-          "longName": "Zone",
-          "fullName": "flamefatex.tcapi.v1.Zone",
-          "description": "",
-          "hasExtensions": false,
-          "hasFields": true,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "id",
-              "description": "",
-              "label": "",
-              "type": "int32",
-              "longType": "int32",
-              "fullType": "int32",
-              "ismap": false,
-              "defaultValue": ""
-            },
-            {
-              "name": "name",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "defaultValue": ""
-            },
-            {
-              "name": "type",
-              "description": "",
-              "label": "",
-              "type": "ZoneType",
-              "longType": "flamefatex.tc.ZoneType",
-              "fullType": "flamefatex.tc.ZoneType",
-              "ismap": false,
-              "defaultValue": ""
-            },
-            {
-              "name": "description",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "ZoneAllRequest",
-          "longName": "ZoneAllRequest",
-          "fullName": "flamefatex.tcapi.v1.ZoneAllRequest",
-          "description": "",
-          "hasExtensions": false,
-          "hasFields": true,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "type",
-              "description": "",
-              "label": "",
-              "type": "ZoneType",
-              "longType": "flamefatex.tc.ZoneType",
-              "fullType": "flamefatex.tc.ZoneType",
-              "ismap": false,
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "ZoneAllResponse",
-          "longName": "ZoneAllResponse",
-          "fullName": "flamefatex.tcapi.v1.ZoneAllResponse",
-          "description": "",
-          "hasExtensions": false,
-          "hasFields": true,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "data",
-              "description": "",
-              "label": "repeated",
-              "type": "Zone",
-              "longType": "Zone",
-              "fullType": "flamefatex.tcapi.v1.Zone",
-              "ismap": false,
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": [
-        {
-          "name": "ZoneService",
-          "longName": "ZoneService",
-          "fullName": "flamefatex.tcapi.v1.ZoneService",
-          "description": "",
-          "methods": [
-            {
-              "name": "All",
-              "description": "",
-              "requestType": "ZoneAllRequest",
-              "requestLongType": "ZoneAllRequest",
-              "requestFullType": "flamefatex.tcapi.v1.ZoneAllRequest",
-              "requestStreaming": false,
-              "responseType": "ZoneAllResponse",
-              "responseLongType": "ZoneAllResponse",
-              "responseFullType": "flamefatex.tcapi.v1.ZoneAllResponse",
-              "responseStreaming": false,
-              "options": {
-                "google.api.http": {
-                  "rules": [
-                    {
-                      "method": "GET",
-                      "pattern": "/v1/zone/all"
-                    }
-                  ]
-                }
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "tcapi/v1/external/zone.proto",
       "description": "",
       "package": "flamefatex.tcapi.v1.external",
@@ -366,6 +228,144 @@
                     {
                       "method": "GET",
                       "pattern": "/v1/external/zone/list"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tcapi/v1/zone.proto",
+      "description": "",
+      "package": "flamefatex.tcapi.v1",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "Zone",
+          "longName": "Zone",
+          "fullName": "flamefatex.tcapi.v1.Zone",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "id",
+              "description": "",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "name",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "type",
+              "description": "",
+              "label": "",
+              "type": "ZoneType",
+              "longType": "flamefatex.tc.ZoneType",
+              "fullType": "flamefatex.tc.ZoneType",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "description",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ZoneAllRequest",
+          "longName": "ZoneAllRequest",
+          "fullName": "flamefatex.tcapi.v1.ZoneAllRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "type",
+              "description": "",
+              "label": "",
+              "type": "ZoneType",
+              "longType": "flamefatex.tc.ZoneType",
+              "fullType": "flamefatex.tc.ZoneType",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ZoneAllResponse",
+          "longName": "ZoneAllResponse",
+          "fullName": "flamefatex.tcapi.v1.ZoneAllResponse",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "data",
+              "description": "",
+              "label": "repeated",
+              "type": "Zone",
+              "longType": "Zone",
+              "fullType": "flamefatex.tcapi.v1.Zone",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "ZoneService",
+          "longName": "ZoneService",
+          "fullName": "flamefatex.tcapi.v1.ZoneService",
+          "description": "",
+          "methods": [
+            {
+              "name": "All",
+              "description": "",
+              "requestType": "ZoneAllRequest",
+              "requestLongType": "ZoneAllRequest",
+              "requestFullType": "flamefatex.tcapi.v1.ZoneAllRequest",
+              "requestStreaming": false,
+              "responseType": "ZoneAllResponse",
+              "responseLongType": "ZoneAllResponse",
+              "responseFullType": "flamefatex.tcapi.v1.ZoneAllResponse",
+              "responseStreaming": false,
+              "options": {
+                "google.api.http": {
+                  "rules": [
+                    {
+                      "method": "GET",
+                      "pattern": "/v1/zone/all"
                     }
                   ]
                 }

@@ -1,0 +1,13 @@
+proto:
+  # 依赖的proto
+  imports:
+    - "/Users/flame/go/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis"
+
+mysql:
+  default:
+    dsn: "user:password@tcp(192.168.0.1:3306)/dbname?timeout=5s&readTimeout=5s&writeTimeout=5s&parseTime=true&loc=Local&charset=utf8,utf8mb4&clientFoundRows=true"
+    enable_log: true
+
+log:
+  level: "debug"
+  enable_console: true

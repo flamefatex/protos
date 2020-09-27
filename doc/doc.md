@@ -8,19 +8,19 @@
   
     - [ZoneType](#flamefatex.tc.ZoneType)
   
-- [tcapi/v1/zone.proto](#tcapi/v1/zone.proto)
-    - [Zone](#flamefatex.tcapi.v1.Zone)
-    - [ZoneAllRequest](#flamefatex.tcapi.v1.ZoneAllRequest)
-    - [ZoneAllResponse](#flamefatex.tcapi.v1.ZoneAllResponse)
-  
-    - [ZoneService](#flamefatex.tcapi.v1.ZoneService)
-  
 - [tcapi/v1/external/zone.proto](#tcapi/v1/external/zone.proto)
     - [ZoneListRequest](#flamefatex.tcapi.v1.external.ZoneListRequest)
     - [ZoneListResponse](#flamefatex.tcapi.v1.external.ZoneListResponse)
     - [ZoneListResponseData](#flamefatex.tcapi.v1.external.ZoneListResponseData)
   
     - [ZoneService](#flamefatex.tcapi.v1.external.ZoneService)
+  
+- [tcapi/v1/zone.proto](#tcapi/v1/zone.proto)
+    - [Zone](#flamefatex.tcapi.v1.Zone)
+    - [ZoneAllRequest](#flamefatex.tcapi.v1.ZoneAllRequest)
+    - [ZoneAllResponse](#flamefatex.tcapi.v1.ZoneAllResponse)
+  
+    - [ZoneService](#flamefatex.tcapi.v1.ZoneService)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -69,80 +69,6 @@
  
 
  
-
- 
-
-
-
-<a name="tcapi/v1/zone.proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## tcapi/v1/zone.proto
-
-
-
-<a name="flamefatex.tcapi.v1.Zone"></a>
-
-### Zone
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
-| name | [string](#string) |  |  |
-| type | [flamefatex.tc.ZoneType](#flamefatex.tc.ZoneType) |  |  |
-| description | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="flamefatex.tcapi.v1.ZoneAllRequest"></a>
-
-### ZoneAllRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [flamefatex.tc.ZoneType](#flamefatex.tc.ZoneType) |  |  |
-
-
-
-
-
-
-<a name="flamefatex.tcapi.v1.ZoneAllResponse"></a>
-
-### ZoneAllResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| data | [Zone](#flamefatex.tcapi.v1.Zone) | repeated |  |
-
-
-
-
-
- 
-
- 
-
- 
-
-
-<a name="flamefatex.tcapi.v1.ZoneService"></a>
-
-### ZoneService
-
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| All | [ZoneAllRequest](#flamefatex.tcapi.v1.ZoneAllRequest) | [ZoneAllResponse](#flamefatex.tcapi.v1.ZoneAllResponse) |  |
 
  
 
@@ -217,6 +143,80 @@
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | List | [ZoneListRequest](#flamefatex.tcapi.v1.external.ZoneListRequest) | [ZoneListResponse](#flamefatex.tcapi.v1.external.ZoneListResponse) |  |
+
+ 
+
+
+
+<a name="tcapi/v1/zone.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## tcapi/v1/zone.proto
+
+
+
+<a name="flamefatex.tcapi.v1.Zone"></a>
+
+### Zone
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int32](#int32) |  |  |
+| name | [string](#string) |  |  |
+| type | [flamefatex.tc.ZoneType](#flamefatex.tc.ZoneType) |  |  |
+| description | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="flamefatex.tcapi.v1.ZoneAllRequest"></a>
+
+### ZoneAllRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| type | [flamefatex.tc.ZoneType](#flamefatex.tc.ZoneType) |  |  |
+
+
+
+
+
+
+<a name="flamefatex.tcapi.v1.ZoneAllResponse"></a>
+
+### ZoneAllResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| data | [Zone](#flamefatex.tcapi.v1.Zone) | repeated |  |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="flamefatex.tcapi.v1.ZoneService"></a>
+
+### ZoneService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| All | [ZoneAllRequest](#flamefatex.tcapi.v1.ZoneAllRequest) | [ZoneAllResponse](#flamefatex.tcapi.v1.ZoneAllResponse) |  |
 
  
 
