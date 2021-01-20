@@ -364,7 +364,7 @@
                   "rules": [
                     {
                       "method": "GET",
-                      "pattern": "/v1/example/all"
+                      "pattern": "/v2/example/all"
                     }
                   ]
                 }
@@ -634,7 +634,7 @@
                   "rules": [
                     {
                       "method": "GET",
-                      "pattern": "/v1/example/all"
+                      "pattern": "/v2/example/all"
                     }
                   ]
                 }

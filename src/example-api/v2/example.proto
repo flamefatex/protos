@@ -13,7 +13,7 @@ import  "common/paging.proto";
 service ExampleService {
     rpc All (ExampleAllRequest) returns (ExampleAllResponse) {
         option (google.api.http) = {
-            get: "/v1/example/all"
+            get: "/v2/example/all"
         };
     }
     rpc List(ExampleListRequest) returns (ExampleListResponse) {

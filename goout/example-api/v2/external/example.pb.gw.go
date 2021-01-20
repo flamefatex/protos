@@ -163,7 +163,7 @@ func RegisterExampleServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_ExampleService_All_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "example", "all"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_ExampleService_All_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v2", "example", "all"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (

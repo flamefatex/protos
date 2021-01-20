@@ -16,7 +16,7 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/v1/example/all": {
+    "/v2/example/all": {
       "get": {
         "tags": [
           "ExampleService"

@@ -11,7 +11,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/example/all": {
+    "/v2/example/all": {
       "get": {
         "operationId": "ExampleService_All",
         "responses": {
