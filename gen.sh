@@ -31,7 +31,7 @@ gen_swagger() {
 }
 
 projects=(
-"tcapi"
+"example-api"
 )
 
 

@@ -1,51 +1,27 @@
 {
   "files": [
     {
-      "name": "tc/zone.proto",
+      "name": "common/paging.proto",
       "description": "",
-      "package": "flamefatex.tc",
-      "hasEnums": true,
+      "package": "flamefatex.common",
+      "hasEnums": false,
       "hasExtensions": false,
       "hasMessages": true,
       "hasServices": false,
-      "enums": [
-        {
-          "name": "ZoneType",
-          "longName": "ZoneType",
-          "fullName": "flamefatex.tc.ZoneType",
-          "description": "",
-          "values": [
-            {
-              "name": "ZONE_TYPE_UNSPECIFIED",
-              "number": "0",
-              "description": ""
-            },
-            {
-              "name": "ZONE_TYPE_ACCESS",
-              "number": "1",
-              "description": ""
-            },
-            {
-              "name": "ZONE_TYPE_PARSE",
-              "number": "2",
-              "description": ""
-            }
-          ]
-        }
-      ],
+      "enums": [],
       "extensions": [],
       "messages": [
         {
-          "name": "Zone",
-          "longName": "Zone",
-          "fullName": "flamefatex.tc.Zone",
-          "description": "",
+          "name": "Paging",
+          "longName": "Paging",
+          "fullName": "flamefatex.common.Paging",
+          "description": "分页",
           "hasExtensions": false,
           "hasFields": true,
           "extensions": [],
           "fields": [
             {
-              "name": "id",
+              "name": "page",
               "description": "",
               "label": "",
               "type": "int32",
@@ -55,42 +31,22 @@
               "defaultValue": ""
             },
             {
-              "name": "name",
+              "name": "page_size",
               "description": "",
               "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
               "ismap": false,
               "defaultValue": ""
             },
             {
-              "name": "type",
+              "name": "total",
               "description": "",
               "label": "",
-              "type": "ZoneType",
-              "longType": "ZoneType",
-              "fullType": "flamefatex.tc.ZoneType",
-              "ismap": false,
-              "defaultValue": ""
-            },
-            {
-              "name": "create_time",
-              "description": "",
-              "label": "",
-              "type": "Timestamp",
-              "longType": "google.protobuf.Timestamp",
-              "fullType": "google.protobuf.Timestamp",
-              "ismap": false,
-              "defaultValue": ""
-            },
-            {
-              "name": "update_time",
-              "description": "",
-              "label": "",
-              "type": "Timestamp",
-              "longType": "google.protobuf.Timestamp",
-              "fullType": "google.protobuf.Timestamp",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
               "ismap": false,
               "defaultValue": ""
             }
@@ -100,9 +56,46 @@
       "services": []
     },
     {
-      "name": "tcapi/v1/external/zone.proto",
+      "name": "example/example.proto",
       "description": "",
-      "package": "flamefatex.tcapi.v1.external",
+      "package": "flamefatex.example",
+      "hasEnums": true,
+      "hasExtensions": false,
+      "hasMessages": false,
+      "hasServices": false,
+      "enums": [
+        {
+          "name": "ExampleType",
+          "longName": "ExampleType",
+          "fullName": "flamefatex.example.ExampleType",
+          "description": "",
+          "values": [
+            {
+              "name": "EXAMPLE_TYPE_UNSPECIFIED",
+              "number": "0",
+              "description": "未指定"
+            },
+            {
+              "name": "EXAMPLE_TYPE_ACCESS",
+              "number": "1",
+              "description": "接入类型"
+            },
+            {
+              "name": "EXAMPLE_TYPE_PARSE",
+              "number": "2",
+              "description": "解析类型"
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [],
+      "services": []
+    },
+    {
+      "name": "example-api/v2/example.proto",
+      "description": "",
+      "package": "flamefatex.example_api.v2",
       "hasEnums": false,
       "hasExtensions": false,
       "hasMessages": true,
@@ -111,51 +104,9 @@
       "extensions": [],
       "messages": [
         {
-          "name": "ZoneListRequest",
-          "longName": "ZoneListRequest",
-          "fullName": "flamefatex.tcapi.v1.external.ZoneListRequest",
-          "description": "",
-          "hasExtensions": false,
-          "hasFields": true,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "type",
-              "description": "",
-              "label": "",
-              "type": "ZoneType",
-              "longType": "flamefatex.tc.ZoneType",
-              "fullType": "flamefatex.tc.ZoneType",
-              "ismap": false,
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "ZoneListResponse",
-          "longName": "ZoneListResponse",
-          "fullName": "flamefatex.tcapi.v1.external.ZoneListResponse",
-          "description": "",
-          "hasExtensions": false,
-          "hasFields": true,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "data",
-              "description": "",
-              "label": "repeated",
-              "type": "ZoneListResponseData",
-              "longType": "ZoneListResponseData",
-              "fullType": "flamefatex.tcapi.v1.external.ZoneListResponseData",
-              "ismap": false,
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "ZoneListResponseData",
-          "longName": "ZoneListResponseData",
-          "fullName": "flamefatex.tcapi.v1.external.ZoneListResponseData",
+          "name": "Example",
+          "longName": "Example",
+          "fullName": "flamefatex.example_api.v2.Example",
           "description": "",
           "hasExtensions": false,
           "hasFields": true,
@@ -185,9 +136,9 @@
               "name": "type",
               "description": "",
               "label": "",
-              "type": "ZoneType",
-              "longType": "flamefatex.tc.ZoneType",
-              "fullType": "flamefatex.tc.ZoneType",
+              "type": "ExampleType",
+              "longType": "flamefatex.example.ExampleType",
+              "fullType": "flamefatex.example.ExampleType",
               "ismap": false,
               "defaultValue": ""
             },
@@ -200,34 +151,332 @@
               "fullType": "string",
               "ismap": false,
               "defaultValue": ""
+            },
+            {
+              "name": "create_time",
+              "description": "",
+              "label": "",
+              "type": "Timestamp",
+              "longType": "google.protobuf.Timestamp",
+              "fullType": "google.protobuf.Timestamp",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "update_time",
+              "description": "",
+              "label": "",
+              "type": "Timestamp",
+              "longType": "google.protobuf.Timestamp",
+              "fullType": "google.protobuf.Timestamp",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ExampleAllRequest",
+          "longName": "ExampleAllRequest",
+          "fullName": "flamefatex.example_api.v2.ExampleAllRequest",
+          "description": "All",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "ExampleAllResponse",
+          "longName": "ExampleAllResponse",
+          "fullName": "flamefatex.example_api.v2.ExampleAllResponse",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "examples",
+              "description": "",
+              "label": "repeated",
+              "type": "Example",
+              "longType": "Example",
+              "fullType": "flamefatex.example_api.v2.Example",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ExampleDeleteRequest",
+          "longName": "ExampleDeleteRequest",
+          "fullName": "flamefatex.example_api.v2.ExampleDeleteRequest",
+          "description": "Delete",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "id",
+              "description": "",
+              "label": "",
+              "type": "int64",
+              "longType": "int64",
+              "fullType": "int64",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ExampleGetRequest",
+          "longName": "ExampleGetRequest",
+          "fullName": "flamefatex.example_api.v2.ExampleGetRequest",
+          "description": "Get",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "id",
+              "description": "",
+              "label": "",
+              "type": "int64",
+              "longType": "int64",
+              "fullType": "int64",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ExampleGetResponse",
+          "longName": "ExampleGetResponse",
+          "fullName": "flamefatex.example_api.v2.ExampleGetResponse",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "example",
+              "description": "",
+              "label": "",
+              "type": "Example",
+              "longType": "Example",
+              "fullType": "flamefatex.example_api.v2.Example",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ExampleListRequest",
+          "longName": "ExampleListRequest",
+          "fullName": "flamefatex.example_api.v2.ExampleListRequest",
+          "description": "List",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "page",
+              "description": "",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "page_size",
+              "description": "",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "type",
+              "description": "",
+              "label": "",
+              "type": "ExampleType",
+              "longType": "flamefatex.example.ExampleType",
+              "fullType": "flamefatex.example.ExampleType",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ExampleListResponse",
+          "longName": "ExampleListResponse",
+          "fullName": "flamefatex.example_api.v2.ExampleListResponse",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "paging",
+              "description": "",
+              "label": "",
+              "type": "Paging",
+              "longType": "flamefatex.common.Paging",
+              "fullType": "flamefatex.common.Paging",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "examples",
+              "description": "",
+              "label": "repeated",
+              "type": "Example",
+              "longType": "Example",
+              "fullType": "flamefatex.example_api.v2.Example",
+              "ismap": false,
+              "defaultValue": ""
             }
           ]
         }
       ],
       "services": [
         {
-          "name": "ZoneService",
-          "longName": "ZoneService",
-          "fullName": "flamefatex.tcapi.v1.external.ZoneService",
+          "name": "ExampleService",
+          "longName": "ExampleService",
+          "fullName": "flamefatex.example_api.v2.ExampleService",
           "description": "",
           "methods": [
             {
-              "name": "List",
+              "name": "All",
               "description": "",
-              "requestType": "ZoneListRequest",
-              "requestLongType": "ZoneListRequest",
-              "requestFullType": "flamefatex.tcapi.v1.external.ZoneListRequest",
+              "requestType": "ExampleAllRequest",
+              "requestLongType": "ExampleAllRequest",
+              "requestFullType": "flamefatex.example_api.v2.ExampleAllRequest",
               "requestStreaming": false,
-              "responseType": "ZoneListResponse",
-              "responseLongType": "ZoneListResponse",
-              "responseFullType": "flamefatex.tcapi.v1.external.ZoneListResponse",
+              "responseType": "ExampleAllResponse",
+              "responseLongType": "ExampleAllResponse",
+              "responseFullType": "flamefatex.example_api.v2.ExampleAllResponse",
               "responseStreaming": false,
               "options": {
                 "google.api.http": {
                   "rules": [
                     {
                       "method": "GET",
-                      "pattern": "/v1/external/zone/list"
+                      "pattern": "/v1/example/all"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "List",
+              "description": "",
+              "requestType": "ExampleListRequest",
+              "requestLongType": "ExampleListRequest",
+              "requestFullType": "flamefatex.example_api.v2.ExampleListRequest",
+              "requestStreaming": false,
+              "responseType": "ExampleListResponse",
+              "responseLongType": "ExampleListResponse",
+              "responseFullType": "flamefatex.example_api.v2.ExampleListResponse",
+              "responseStreaming": false,
+              "options": {
+                "google.api.http": {
+                  "rules": [
+                    {
+                      "method": "GET",
+                      "pattern": "/v2/example/list"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Get",
+              "description": "",
+              "requestType": "ExampleGetRequest",
+              "requestLongType": "ExampleGetRequest",
+              "requestFullType": "flamefatex.example_api.v2.ExampleGetRequest",
+              "requestStreaming": false,
+              "responseType": "ExampleGetResponse",
+              "responseLongType": "ExampleGetResponse",
+              "responseFullType": "flamefatex.example_api.v2.ExampleGetResponse",
+              "responseStreaming": false,
+              "options": {
+                "google.api.http": {
+                  "rules": [
+                    {
+                      "method": "GET",
+                      "pattern": "/v2/example/get"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Create",
+              "description": "",
+              "requestType": "Example",
+              "requestLongType": "Example",
+              "requestFullType": "flamefatex.example_api.v2.Example",
+              "requestStreaming": false,
+              "responseType": "Empty",
+              "responseLongType": ".google.protobuf.Empty",
+              "responseFullType": "google.protobuf.Empty",
+              "responseStreaming": false,
+              "options": {
+                "google.api.http": {
+                  "rules": [
+                    {
+                      "method": "POST",
+                      "pattern": "/v2/example/create",
+                      "body": "*"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Update",
+              "description": "",
+              "requestType": "Example",
+              "requestLongType": "Example",
+              "requestFullType": "flamefatex.example_api.v2.Example",
+              "requestStreaming": false,
+              "responseType": "Empty",
+              "responseLongType": ".google.protobuf.Empty",
+              "responseFullType": "google.protobuf.Empty",
+              "responseStreaming": false,
+              "options": {
+                "google.api.http": {
+                  "rules": [
+                    {
+                      "method": "PUT",
+                      "pattern": "/v2/example/update",
+                      "body": "*"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Delete",
+              "description": "",
+              "requestType": "ExampleDeleteRequest",
+              "requestLongType": "ExampleDeleteRequest",
+              "requestFullType": "flamefatex.example_api.v2.ExampleDeleteRequest",
+              "requestStreaming": false,
+              "responseType": "Empty",
+              "responseLongType": ".google.protobuf.Empty",
+              "responseFullType": "google.protobuf.Empty",
+              "responseStreaming": false,
+              "options": {
+                "google.api.http": {
+                  "rules": [
+                    {
+                      "method": "DELETE",
+                      "pattern": "/v2/example/delete"
                     }
                   ]
                 }
@@ -238,9 +487,9 @@
       ]
     },
     {
-      "name": "tcapi/v1/zone.proto",
+      "name": "example-api/v2/external/example.proto",
       "description": "",
-      "package": "flamefatex.tcapi.v1",
+      "package": "flamefatex.example_api.v2.external",
       "hasEnums": false,
       "hasExtensions": false,
       "hasMessages": true,
@@ -249,9 +498,9 @@
       "extensions": [],
       "messages": [
         {
-          "name": "Zone",
-          "longName": "Zone",
-          "fullName": "flamefatex.tcapi.v1.Zone",
+          "name": "Example",
+          "longName": "Example",
+          "fullName": "flamefatex.example_api.v2.external.Example",
           "description": "",
           "hasExtensions": false,
           "hasFields": true,
@@ -281,9 +530,9 @@
               "name": "type",
               "description": "",
               "label": "",
-              "type": "ZoneType",
-              "longType": "flamefatex.tc.ZoneType",
-              "fullType": "flamefatex.tc.ZoneType",
+              "type": "ExampleType",
+              "longType": "flamefatex.example.ExampleType",
+              "fullType": "flamefatex.example.ExampleType",
               "ismap": false,
               "defaultValue": ""
             },
@@ -296,13 +545,33 @@
               "fullType": "string",
               "ismap": false,
               "defaultValue": ""
+            },
+            {
+              "name": "create_time",
+              "description": "",
+              "label": "",
+              "type": "Timestamp",
+              "longType": "google.protobuf.Timestamp",
+              "fullType": "google.protobuf.Timestamp",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "update_time",
+              "description": "",
+              "label": "",
+              "type": "Timestamp",
+              "longType": "google.protobuf.Timestamp",
+              "fullType": "google.protobuf.Timestamp",
+              "ismap": false,
+              "defaultValue": ""
             }
           ]
         },
         {
-          "name": "ZoneAllRequest",
-          "longName": "ZoneAllRequest",
-          "fullName": "flamefatex.tcapi.v1.ZoneAllRequest",
+          "name": "ExampleAllRequest",
+          "longName": "ExampleAllRequest",
+          "fullName": "flamefatex.example_api.v2.external.ExampleAllRequest",
           "description": "",
           "hasExtensions": false,
           "hasFields": true,
@@ -312,30 +581,30 @@
               "name": "type",
               "description": "",
               "label": "",
-              "type": "ZoneType",
-              "longType": "flamefatex.tc.ZoneType",
-              "fullType": "flamefatex.tc.ZoneType",
+              "type": "ExampleType",
+              "longType": "flamefatex.example.ExampleType",
+              "fullType": "flamefatex.example.ExampleType",
               "ismap": false,
               "defaultValue": ""
             }
           ]
         },
         {
-          "name": "ZoneAllResponse",
-          "longName": "ZoneAllResponse",
-          "fullName": "flamefatex.tcapi.v1.ZoneAllResponse",
+          "name": "ExampleAllResponse",
+          "longName": "ExampleAllResponse",
+          "fullName": "flamefatex.example_api.v2.external.ExampleAllResponse",
           "description": "",
           "hasExtensions": false,
           "hasFields": true,
           "extensions": [],
           "fields": [
             {
-              "name": "data",
+              "name": "examples",
               "description": "",
               "label": "repeated",
-              "type": "Zone",
-              "longType": "Zone",
-              "fullType": "flamefatex.tcapi.v1.Zone",
+              "type": "Example",
+              "longType": "Example",
+              "fullType": "flamefatex.example_api.v2.external.Example",
               "ismap": false,
               "defaultValue": ""
             }
@@ -344,28 +613,28 @@
       ],
       "services": [
         {
-          "name": "ZoneService",
-          "longName": "ZoneService",
-          "fullName": "flamefatex.tcapi.v1.ZoneService",
+          "name": "ExampleService",
+          "longName": "ExampleService",
+          "fullName": "flamefatex.example_api.v2.external.ExampleService",
           "description": "",
           "methods": [
             {
               "name": "All",
               "description": "",
-              "requestType": "ZoneAllRequest",
-              "requestLongType": "ZoneAllRequest",
-              "requestFullType": "flamefatex.tcapi.v1.ZoneAllRequest",
+              "requestType": "ExampleAllRequest",
+              "requestLongType": "ExampleAllRequest",
+              "requestFullType": "flamefatex.example_api.v2.external.ExampleAllRequest",
               "requestStreaming": false,
-              "responseType": "ZoneAllResponse",
-              "responseLongType": "ZoneAllResponse",
-              "responseFullType": "flamefatex.tcapi.v1.ZoneAllResponse",
+              "responseType": "ExampleAllResponse",
+              "responseLongType": "ExampleAllResponse",
+              "responseFullType": "flamefatex.example_api.v2.external.ExampleAllResponse",
               "responseStreaming": false,
               "options": {
                 "google.api.http": {
                   "rules": [
                     {
                       "method": "GET",
-                      "pattern": "/v1/zone/all"
+                      "pattern": "/v1/example/all"
                     }
                   ]
                 }

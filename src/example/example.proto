@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package flamefatex.example;
+option go_package = "github.com/flamefatex/protos/goout/example";
+
+enum ExampleType {
+    EXAMPLE_TYPE_UNSPECIFIED = 0; // 未指定
+    EXAMPLE_TYPE_ACCESS = 1;      // 接入类型
+    EXAMPLE_TYPE_PARSE = 2;       // 解析类型
+}
+

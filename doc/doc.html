@@ -175,16 +175,27 @@
         
           
           <li>
-            <a href="#tc%2fzone.proto">tc/zone.proto</a>
+            <a href="#common%2fpaging.proto">common/paging.proto</a>
             <ul>
               
                 <li>
-                  <a href="#flamefatex.tc.Zone"><span class="badge">M</span>Zone</a>
+                  <a href="#flamefatex.common.Paging"><span class="badge">M</span>Paging</a>
                 </li>
               
               
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#example%2fexample.proto">example/example.proto</a>
+            <ul>
+              
+              
                 <li>
-                  <a href="#flamefatex.tc.ZoneType"><span class="badge">E</span>ZoneType</a>
+                  <a href="#flamefatex.example.ExampleType"><span class="badge">E</span>ExampleType</a>
                 </li>
               
               
@@ -194,26 +205,46 @@
         
           
           <li>
-            <a href="#tcapi%2fv1%2fexternal%2fzone.proto">tcapi/v1/external/zone.proto</a>
+            <a href="#example-api%2fv2%2fexample.proto">example-api/v2/example.proto</a>
             <ul>
               
                 <li>
-                  <a href="#flamefatex.tcapi.v1.external.ZoneListRequest"><span class="badge">M</span>ZoneListRequest</a>
+                  <a href="#flamefatex.example_api.v2.Example"><span class="badge">M</span>Example</a>
                 </li>
               
                 <li>
-                  <a href="#flamefatex.tcapi.v1.external.ZoneListResponse"><span class="badge">M</span>ZoneListResponse</a>
+                  <a href="#flamefatex.example_api.v2.ExampleAllRequest"><span class="badge">M</span>ExampleAllRequest</a>
                 </li>
               
                 <li>
-                  <a href="#flamefatex.tcapi.v1.external.ZoneListResponseData"><span class="badge">M</span>ZoneListResponseData</a>
+                  <a href="#flamefatex.example_api.v2.ExampleAllResponse"><span class="badge">M</span>ExampleAllResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#flamefatex.example_api.v2.ExampleDeleteRequest"><span class="badge">M</span>ExampleDeleteRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#flamefatex.example_api.v2.ExampleGetRequest"><span class="badge">M</span>ExampleGetRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#flamefatex.example_api.v2.ExampleGetResponse"><span class="badge">M</span>ExampleGetResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#flamefatex.example_api.v2.ExampleListRequest"><span class="badge">M</span>ExampleListRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#flamefatex.example_api.v2.ExampleListResponse"><span class="badge">M</span>ExampleListResponse</a>
                 </li>
               
               
               
               
                 <li>
-                  <a href="#flamefatex.tcapi.v1.external.ZoneService"><span class="badge">S</span>ZoneService</a>
+                  <a href="#flamefatex.example_api.v2.ExampleService"><span class="badge">S</span>ExampleService</a>
                 </li>
               
             </ul>
@@ -221,26 +252,26 @@
         
           
           <li>
-            <a href="#tcapi%2fv1%2fzone.proto">tcapi/v1/zone.proto</a>
+            <a href="#example-api%2fv2%2fexternal%2fexample.proto">example-api/v2/external/example.proto</a>
             <ul>
               
                 <li>
-                  <a href="#flamefatex.tcapi.v1.Zone"><span class="badge">M</span>Zone</a>
+                  <a href="#flamefatex.example_api.v2.external.Example"><span class="badge">M</span>Example</a>
                 </li>
               
                 <li>
-                  <a href="#flamefatex.tcapi.v1.ZoneAllRequest"><span class="badge">M</span>ZoneAllRequest</a>
+                  <a href="#flamefatex.example_api.v2.external.ExampleAllRequest"><span class="badge">M</span>ExampleAllRequest</a>
                 </li>
               
                 <li>
-                  <a href="#flamefatex.tcapi.v1.ZoneAllResponse"><span class="badge">M</span>ZoneAllResponse</a>
+                  <a href="#flamefatex.example_api.v2.external.ExampleAllResponse"><span class="badge">M</span>ExampleAllResponse</a>
                 </li>
               
               
               
               
                 <li>
-                  <a href="#flamefatex.tcapi.v1.ZoneService"><span class="badge">S</span>ZoneService</a>
+                  <a href="#flamefatex.example_api.v2.external.ExampleService"><span class="badge">S</span>ExampleService</a>
                 </li>
               
             </ul>
@@ -253,13 +284,13 @@
     
       
       <div class="file-heading">
-        <h2 id="tc/zone.proto">tc/zone.proto</h2><a href="#title">Top</a>
+        <h2 id="common/paging.proto">common/paging.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
 
       
-        <h3 id="flamefatex.tc.Zone">Zone</h3>
-        <p></p>
+        <h3 id="flamefatex.common.Paging">Paging</h3>
+        <p>分页</p>
 
         
           <table class="field-table">
@@ -269,36 +300,22 @@
             <tbody>
               
                 <tr>
-                  <td>id</td>
+                  <td>page</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>name</td>
-                  <td><a href="#string">string</a></td>
+                  <td>page_size</td>
+                  <td><a href="#int32">int32</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>type</td>
-                  <td><a href="#flamefatex.tc.ZoneType">ZoneType</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>create_time</td>
-                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>update_time</td>
-                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td>total</td>
+                  <td><a href="#int32">int32</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -312,7 +329,21 @@
       
 
       
-        <h3 id="flamefatex.tc.ZoneType">ZoneType</h3>
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="example/example.proto">example/example.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+
+      
+        <h3 id="flamefatex.example.ExampleType">ExampleType</h3>
         <p></p>
         <table class="enum-table">
           <thead>
@@ -321,21 +352,21 @@
           <tbody>
             
               <tr>
-                <td>ZONE_TYPE_UNSPECIFIED</td>
+                <td>EXAMPLE_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
-                <td>ZONE_TYPE_ACCESS</td>
+                <td>EXAMPLE_TYPE_ACCESS</td>
                 <td>1</td>
-                <td><p></p></td>
+                <td><p>接入类型</p></td>
               </tr>
             
               <tr>
-                <td>ZONE_TYPE_PARSE</td>
+                <td>EXAMPLE_TYPE_PARSE</td>
                 <td>2</td>
-                <td><p></p></td>
+                <td><p>解析类型</p></td>
               </tr>
             
           </tbody>
@@ -348,60 +379,12 @@
     
       
       <div class="file-heading">
-        <h2 id="tcapi/v1/external/zone.proto">tcapi/v1/external/zone.proto</h2><a href="#title">Top</a>
+        <h2 id="example-api/v2/example.proto">example-api/v2/example.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
 
       
-        <h3 id="flamefatex.tcapi.v1.external.ZoneListRequest">ZoneListRequest</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>type</td>
-                  <td><a href="#flamefatex.tc.ZoneType">flamefatex.tc.ZoneType</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="flamefatex.tcapi.v1.external.ZoneListResponse">ZoneListResponse</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>data</td>
-                  <td><a href="#flamefatex.tcapi.v1.external.ZoneListResponseData">ZoneListResponseData</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="flamefatex.tcapi.v1.external.ZoneListResponseData">ZoneListResponseData</h3>
+        <h3 id="flamefatex.example_api.v2.Example">Example</h3>
         <p></p>
 
         
@@ -427,7 +410,7 @@
               
                 <tr>
                   <td>type</td>
-                  <td><a href="#flamefatex.tc.ZoneType">flamefatex.tc.ZoneType</a></td>
+                  <td><a href="#flamefatex.example.ExampleType">flamefatex.example.ExampleType</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -436,6 +419,192 @@
                   <td>description</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>create_time</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_time</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="flamefatex.example_api.v2.ExampleAllRequest">ExampleAllRequest</h3>
+        <p>All</p>
+
+        
+
+        
+      
+        <h3 id="flamefatex.example_api.v2.ExampleAllResponse">ExampleAllResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>examples</td>
+                  <td><a href="#flamefatex.example_api.v2.Example">Example</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="flamefatex.example_api.v2.ExampleDeleteRequest">ExampleDeleteRequest</h3>
+        <p>Delete</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="flamefatex.example_api.v2.ExampleGetRequest">ExampleGetRequest</h3>
+        <p>Get</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="flamefatex.example_api.v2.ExampleGetResponse">ExampleGetResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>example</td>
+                  <td><a href="#flamefatex.example_api.v2.Example">Example</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="flamefatex.example_api.v2.ExampleListRequest">ExampleListRequest</h3>
+        <p>List</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>page</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>page_size</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#flamefatex.example.ExampleType">flamefatex.example.ExampleType</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="flamefatex.example_api.v2.ExampleListResponse">ExampleListResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>paging</td>
+                  <td><a href="#flamefatex.common.Paging">flamefatex.common.Paging</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>examples</td>
+                  <td><a href="#flamefatex.example_api.v2.Example">Example</a></td>
+                  <td>repeated</td>
                   <td><p> </p></td>
                 </tr>
               
@@ -452,7 +621,7 @@
       
 
       
-        <h3 id="flamefatex.tcapi.v1.external.ZoneService">ZoneService</h3>
+        <h3 id="flamefatex.example_api.v2.ExampleService">ExampleService</h3>
         <p></p>
         <table class="enum-table">
           <thead>
@@ -461,9 +630,44 @@
           <tbody>
             
               <tr>
+                <td>All</td>
+                <td><a href="#flamefatex.example_api.v2.ExampleAllRequest">ExampleAllRequest</a></td>
+                <td><a href="#flamefatex.example_api.v2.ExampleAllResponse">ExampleAllResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
                 <td>List</td>
-                <td><a href="#flamefatex.tcapi.v1.external.ZoneListRequest">ZoneListRequest</a></td>
-                <td><a href="#flamefatex.tcapi.v1.external.ZoneListResponse">ZoneListResponse</a></td>
+                <td><a href="#flamefatex.example_api.v2.ExampleListRequest">ExampleListRequest</a></td>
+                <td><a href="#flamefatex.example_api.v2.ExampleListResponse">ExampleListResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Get</td>
+                <td><a href="#flamefatex.example_api.v2.ExampleGetRequest">ExampleGetRequest</a></td>
+                <td><a href="#flamefatex.example_api.v2.ExampleGetResponse">ExampleGetResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Create</td>
+                <td><a href="#flamefatex.example_api.v2.Example">Example</a></td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Update</td>
+                <td><a href="#flamefatex.example_api.v2.Example">Example</a></td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Delete</td>
+                <td><a href="#flamefatex.example_api.v2.ExampleDeleteRequest">ExampleDeleteRequest</a></td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
                 <td><p></p></td>
               </tr>
             
@@ -488,9 +692,59 @@
               
               
               <tr>
+                <td>All</td>
+                <td>GET</td>
+                <td>/v1/example/all</td>
+                <td></td>
+              </tr>
+              
+            
+              
+              
+              <tr>
                 <td>List</td>
                 <td>GET</td>
-                <td>/v1/external/zone/list</td>
+                <td>/v2/example/list</td>
+                <td></td>
+              </tr>
+              
+            
+              
+              
+              <tr>
+                <td>Get</td>
+                <td>GET</td>
+                <td>/v2/example/get</td>
+                <td></td>
+              </tr>
+              
+            
+              
+              
+              <tr>
+                <td>Create</td>
+                <td>POST</td>
+                <td>/v2/example/create</td>
+                <td>*</td>
+              </tr>
+              
+            
+              
+              
+              <tr>
+                <td>Update</td>
+                <td>PUT</td>
+                <td>/v2/example/update</td>
+                <td>*</td>
+              </tr>
+              
+            
+              
+              
+              <tr>
+                <td>Delete</td>
+                <td>DELETE</td>
+                <td>/v2/example/delete</td>
                 <td></td>
               </tr>
               
@@ -502,12 +756,12 @@
     
       
       <div class="file-heading">
-        <h2 id="tcapi/v1/zone.proto">tcapi/v1/zone.proto</h2><a href="#title">Top</a>
+        <h2 id="example-api/v2/external/example.proto">example-api/v2/external/example.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
 
       
-        <h3 id="flamefatex.tcapi.v1.Zone">Zone</h3>
+        <h3 id="flamefatex.example_api.v2.external.Example">Example</h3>
         <p></p>
 
         
@@ -533,7 +787,7 @@
               
                 <tr>
                   <td>type</td>
-                  <td><a href="#flamefatex.tc.ZoneType">flamefatex.tc.ZoneType</a></td>
+                  <td><a href="#flamefatex.example.ExampleType">flamefatex.example.ExampleType</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -545,26 +799,16 @@
                   <td><p> </p></td>
                 </tr>
               
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="flamefatex.tcapi.v1.ZoneAllRequest">ZoneAllRequest</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
+                <tr>
+                  <td>create_time</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
               
                 <tr>
-                  <td>type</td>
-                  <td><a href="#flamefatex.tc.ZoneType">flamefatex.tc.ZoneType</a></td>
+                  <td>update_time</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -576,7 +820,7 @@
 
         
       
-        <h3 id="flamefatex.tcapi.v1.ZoneAllResponse">ZoneAllResponse</h3>
+        <h3 id="flamefatex.example_api.v2.external.ExampleAllRequest">ExampleAllRequest</h3>
         <p></p>
 
         
@@ -587,8 +831,32 @@
             <tbody>
               
                 <tr>
-                  <td>data</td>
-                  <td><a href="#flamefatex.tcapi.v1.Zone">Zone</a></td>
+                  <td>type</td>
+                  <td><a href="#flamefatex.example.ExampleType">flamefatex.example.ExampleType</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="flamefatex.example_api.v2.external.ExampleAllResponse">ExampleAllResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>examples</td>
+                  <td><a href="#flamefatex.example_api.v2.external.Example">Example</a></td>
                   <td>repeated</td>
                   <td><p> </p></td>
                 </tr>
@@ -606,7 +874,7 @@
       
 
       
-        <h3 id="flamefatex.tcapi.v1.ZoneService">ZoneService</h3>
+        <h3 id="flamefatex.example_api.v2.external.ExampleService">ExampleService</h3>
         <p></p>
         <table class="enum-table">
           <thead>
@@ -616,8 +884,8 @@
             
               <tr>
                 <td>All</td>
-                <td><a href="#flamefatex.tcapi.v1.ZoneAllRequest">ZoneAllRequest</a></td>
-                <td><a href="#flamefatex.tcapi.v1.ZoneAllResponse">ZoneAllResponse</a></td>
+                <td><a href="#flamefatex.example_api.v2.external.ExampleAllRequest">ExampleAllRequest</a></td>
+                <td><a href="#flamefatex.example_api.v2.external.ExampleAllResponse">ExampleAllResponse</a></td>
                 <td><p></p></td>
               </tr>
             
@@ -644,7 +912,7 @@
               <tr>
                 <td>All</td>
                 <td>GET</td>
-                <td>/v1/zone/all</td>
+                <td>/v1/example/all</td>
                 <td></td>
               </tr>
               

@@ -16,21 +16,143 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/v1/zone/all": {
+    "/v1/example/all": {
       "get": {
         "tags": [
-          "ZoneService"
+          "ExampleService"
         ],
-        "operationId": "ZoneService_All",
+        "operationId": "ExampleService_All",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2ExampleAllResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        }
+      }
+    },
+    "/v2/example/create": {
+      "post": {
+        "tags": [
+          "ExampleService"
+        ],
+        "operationId": "ExampleService_Create",
         "parameters": [
           {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2Example"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        }
+      }
+    },
+    "/v2/example/delete": {
+      "delete": {
+        "tags": [
+          "ExampleService"
+        ],
+        "operationId": "ExampleService_Delete",
+        "parameters": [
+          {
+            "type": "string",
+            "format": "int64",
+            "name": "id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        }
+      }
+    },
+    "/v2/example/get": {
+      "get": {
+        "tags": [
+          "ExampleService"
+        ],
+        "operationId": "ExampleService_Get",
+        "parameters": [
+          {
+            "type": "string",
+            "format": "int64",
+            "name": "id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2ExampleGetResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        }
+      }
+    },
+    "/v2/example/list": {
+      "get": {
+        "tags": [
+          "ExampleService"
+        ],
+        "operationId": "ExampleService_List",
+        "parameters": [
+          {
+            "type": "integer",
+            "format": "int32",
+            "name": "page",
+            "in": "query"
+          },
+          {
+            "type": "integer",
+            "format": "int32",
+            "name": "page_size",
+            "in": "query"
+          },
+          {
             "enum": [
-              "ZONE_TYPE_UNSPECIFIED",
-              "ZONE_TYPE_ACCESS",
-              "ZONE_TYPE_PARSE"
+              "EXAMPLE_TYPE_UNSPECIFIED",
+              "EXAMPLE_TYPE_ACCESS",
+              "EXAMPLE_TYPE_PARSE"
             ],
             "type": "string",
-            "default": "ZONE_TYPE_UNSPECIFIED",
+            "default": "EXAMPLE_TYPE_UNSPECIFIED",
             "name": "type",
             "in": "query"
           }
@@ -39,8 +161,38 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1ZoneAllResponse"
+              "$ref": "#/definitions/v2ExampleListResponse"
             }
+          },
+          "default": {
+            "description": "An unexpected error response",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        }
+      }
+    },
+    "/v2/example/update": {
+      "put": {
+        "tags": [
+          "ExampleService"
+        ],
+        "operationId": "ExampleService_Update",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v2Example"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {}
           },
           "default": {
             "description": "An unexpected error response",
@@ -53,6 +205,33 @@
     }
   },
   "definitions": {
+    "commonPaging": {
+      "type": "object",
+      "title": "分页",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "page_size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "exampleExampleType": {
+      "type": "string",
+      "default": "EXAMPLE_TYPE_UNSPECIFIED",
+      "enum": [
+        "EXAMPLE_TYPE_UNSPECIFIED",
+        "EXAMPLE_TYPE_ACCESS",
+        "EXAMPLE_TYPE_PARSE"
+      ]
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -86,41 +265,62 @@
         }
       }
     },
-    "tcZoneType": {
-      "type": "string",
-      "default": "ZONE_TYPE_UNSPECIFIED",
-      "enum": [
-        "ZONE_TYPE_UNSPECIFIED",
-        "ZONE_TYPE_ACCESS",
-        "ZONE_TYPE_PARSE"
-      ]
-    },
-    "tcapiv1Zone": {
+    "v2Example": {
       "type": "object",
       "properties": {
+        "create_time": {
+          "type": "string",
+          "format": "date-time"
+        },
         "description": {
           "type": "string"
         },
         "id": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string",
+          "format": "int64"
         },
         "name": {
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/tcZoneType"
+          "$ref": "#/definitions/exampleExampleType"
+        },
+        "update_time": {
+          "type": "string",
+          "format": "date-time"
         }
       }
     },
-    "v1ZoneAllResponse": {
+    "v2ExampleAllResponse": {
       "type": "object",
       "properties": {
-        "data": {
+        "examples": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/tcapiv1Zone"
+            "$ref": "#/definitions/v2Example"
           }
+        }
+      }
+    },
+    "v2ExampleGetResponse": {
+      "type": "object",
+      "properties": {
+        "example": {
+          "$ref": "#/definitions/v2Example"
+        }
+      }
+    },
+    "v2ExampleListResponse": {
+      "type": "object",
+      "properties": {
+        "examples": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2Example"
+          }
+        },
+        "paging": {
+          "$ref": "#/definitions/commonPaging"
         }
       }
     }

@@ -3,49 +3,53 @@
 
 ## Table of Contents
 
-- [tc/zone.proto](#tc/zone.proto)
-    - [Zone](#flamefatex.tc.Zone)
+- [common/paging.proto](#common/paging.proto)
+    - [Paging](#flamefatex.common.Paging)
   
-    - [ZoneType](#flamefatex.tc.ZoneType)
+- [example/example.proto](#example/example.proto)
+    - [ExampleType](#flamefatex.example.ExampleType)
   
-- [tcapi/v1/external/zone.proto](#tcapi/v1/external/zone.proto)
-    - [ZoneListRequest](#flamefatex.tcapi.v1.external.ZoneListRequest)
-    - [ZoneListResponse](#flamefatex.tcapi.v1.external.ZoneListResponse)
-    - [ZoneListResponseData](#flamefatex.tcapi.v1.external.ZoneListResponseData)
+- [example-api/v2/example.proto](#example-api/v2/example.proto)
+    - [Example](#flamefatex.example_api.v2.Example)
+    - [ExampleAllRequest](#flamefatex.example_api.v2.ExampleAllRequest)
+    - [ExampleAllResponse](#flamefatex.example_api.v2.ExampleAllResponse)
+    - [ExampleDeleteRequest](#flamefatex.example_api.v2.ExampleDeleteRequest)
+    - [ExampleGetRequest](#flamefatex.example_api.v2.ExampleGetRequest)
+    - [ExampleGetResponse](#flamefatex.example_api.v2.ExampleGetResponse)
+    - [ExampleListRequest](#flamefatex.example_api.v2.ExampleListRequest)
+    - [ExampleListResponse](#flamefatex.example_api.v2.ExampleListResponse)
   
-    - [ZoneService](#flamefatex.tcapi.v1.external.ZoneService)
+    - [ExampleService](#flamefatex.example_api.v2.ExampleService)
   
-- [tcapi/v1/zone.proto](#tcapi/v1/zone.proto)
-    - [Zone](#flamefatex.tcapi.v1.Zone)
-    - [ZoneAllRequest](#flamefatex.tcapi.v1.ZoneAllRequest)
-    - [ZoneAllResponse](#flamefatex.tcapi.v1.ZoneAllResponse)
+- [example-api/v2/external/example.proto](#example-api/v2/external/example.proto)
+    - [Example](#flamefatex.example_api.v2.external.Example)
+    - [ExampleAllRequest](#flamefatex.example_api.v2.external.ExampleAllRequest)
+    - [ExampleAllResponse](#flamefatex.example_api.v2.external.ExampleAllResponse)
   
-    - [ZoneService](#flamefatex.tcapi.v1.ZoneService)
+    - [ExampleService](#flamefatex.example_api.v2.external.ExampleService)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="tc/zone.proto"></a>
+<a name="common/paging.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## tc/zone.proto
+## common/paging.proto
 
 
 
-<a name="flamefatex.tc.Zone"></a>
+<a name="flamefatex.common.Paging"></a>
 
-### Zone
-
+### Paging
+分页
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
-| name | [string](#string) |  |  |
-| type | [ZoneType](#flamefatex.tc.ZoneType) |  |  |
-| create_time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
-| update_time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+| page | [int32](#int32) |  |  |
+| page_size | [int32](#int32) |  |  |
+| total | [int32](#int32) |  |  |
 
 
 
@@ -53,17 +57,33 @@
 
  
 
+ 
 
-<a name="flamefatex.tc.ZoneType"></a>
+ 
 
-### ZoneType
+ 
+
+
+
+<a name="example/example.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## example/example.proto
+
+
+ 
+
+
+<a name="flamefatex.example.ExampleType"></a>
+
+### ExampleType
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| ZONE_TYPE_UNSPECIFIED | 0 |  |
-| ZONE_TYPE_ACCESS | 1 |  |
-| ZONE_TYPE_PARSE | 2 |  |
+| EXAMPLE_TYPE_UNSPECIFIED | 0 | 未指定 |
+| EXAMPLE_TYPE_ACCESS | 1 | 接入类型 |
+| EXAMPLE_TYPE_PARSE | 2 | 解析类型 |
 
 
  
@@ -74,46 +94,16 @@
 
 
 
-<a name="tcapi/v1/external/zone.proto"></a>
+<a name="example-api/v2/example.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## tcapi/v1/external/zone.proto
+## example-api/v2/example.proto
 
 
 
-<a name="flamefatex.tcapi.v1.external.ZoneListRequest"></a>
+<a name="flamefatex.example_api.v2.Example"></a>
 
-### ZoneListRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [flamefatex.tc.ZoneType](#flamefatex.tc.ZoneType) |  |  |
-
-
-
-
-
-
-<a name="flamefatex.tcapi.v1.external.ZoneListResponse"></a>
-
-### ZoneListResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| data | [ZoneListResponseData](#flamefatex.tcapi.v1.external.ZoneListResponseData) | repeated |  |
-
-
-
-
-
-
-<a name="flamefatex.tcapi.v1.external.ZoneListResponseData"></a>
-
-### ZoneListResponseData
+### Example
 
 
 
@@ -121,8 +111,113 @@
 | ----- | ---- | ----- | ----------- |
 | id | [int64](#int64) |  |  |
 | name | [string](#string) |  |  |
-| type | [flamefatex.tc.ZoneType](#flamefatex.tc.ZoneType) |  |  |
+| type | [flamefatex.example.ExampleType](#flamefatex.example.ExampleType) |  |  |
 | description | [string](#string) |  |  |
+| create_time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+| update_time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+
+
+
+
+
+
+<a name="flamefatex.example_api.v2.ExampleAllRequest"></a>
+
+### ExampleAllRequest
+All
+
+
+
+
+
+
+<a name="flamefatex.example_api.v2.ExampleAllResponse"></a>
+
+### ExampleAllResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| examples | [Example](#flamefatex.example_api.v2.Example) | repeated |  |
+
+
+
+
+
+
+<a name="flamefatex.example_api.v2.ExampleDeleteRequest"></a>
+
+### ExampleDeleteRequest
+Delete
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="flamefatex.example_api.v2.ExampleGetRequest"></a>
+
+### ExampleGetRequest
+Get
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="flamefatex.example_api.v2.ExampleGetResponse"></a>
+
+### ExampleGetResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| example | [Example](#flamefatex.example_api.v2.Example) |  |  |
+
+
+
+
+
+
+<a name="flamefatex.example_api.v2.ExampleListRequest"></a>
+
+### ExampleListRequest
+List
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| page | [int32](#int32) |  |  |
+| page_size | [int32](#int32) |  |  |
+| type | [flamefatex.example.ExampleType](#flamefatex.example.ExampleType) |  |  |
+
+
+
+
+
+
+<a name="flamefatex.example_api.v2.ExampleListResponse"></a>
+
+### ExampleListResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| paging | [flamefatex.common.Paging](#flamefatex.common.Paging) |  |  |
+| examples | [Example](#flamefatex.example_api.v2.Example) | repeated |  |
 
 
 
@@ -135,29 +230,34 @@
  
 
 
-<a name="flamefatex.tcapi.v1.external.ZoneService"></a>
+<a name="flamefatex.example_api.v2.ExampleService"></a>
 
-### ZoneService
+### ExampleService
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| List | [ZoneListRequest](#flamefatex.tcapi.v1.external.ZoneListRequest) | [ZoneListResponse](#flamefatex.tcapi.v1.external.ZoneListResponse) |  |
+| All | [ExampleAllRequest](#flamefatex.example_api.v2.ExampleAllRequest) | [ExampleAllResponse](#flamefatex.example_api.v2.ExampleAllResponse) |  |
+| List | [ExampleListRequest](#flamefatex.example_api.v2.ExampleListRequest) | [ExampleListResponse](#flamefatex.example_api.v2.ExampleListResponse) |  |
+| Get | [ExampleGetRequest](#flamefatex.example_api.v2.ExampleGetRequest) | [ExampleGetResponse](#flamefatex.example_api.v2.ExampleGetResponse) |  |
+| Create | [Example](#flamefatex.example_api.v2.Example) | [.google.protobuf.Empty](#google.protobuf.Empty) |  |
+| Update | [Example](#flamefatex.example_api.v2.Example) | [.google.protobuf.Empty](#google.protobuf.Empty) |  |
+| Delete | [ExampleDeleteRequest](#flamefatex.example_api.v2.ExampleDeleteRequest) | [.google.protobuf.Empty](#google.protobuf.Empty) |  |
 
  
 
 
 
-<a name="tcapi/v1/zone.proto"></a>
+<a name="example-api/v2/external/example.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## tcapi/v1/zone.proto
+## example-api/v2/external/example.proto
 
 
 
-<a name="flamefatex.tcapi.v1.Zone"></a>
+<a name="flamefatex.example_api.v2.external.Example"></a>
 
-### Zone
+### Example
 
 
 
@@ -165,38 +265,40 @@
 | ----- | ---- | ----- | ----------- |
 | id | [int32](#int32) |  |  |
 | name | [string](#string) |  |  |
-| type | [flamefatex.tc.ZoneType](#flamefatex.tc.ZoneType) |  |  |
+| type | [flamefatex.example.ExampleType](#flamefatex.example.ExampleType) |  |  |
 | description | [string](#string) |  |  |
+| create_time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+| update_time | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
 
 
 
 
 
 
-<a name="flamefatex.tcapi.v1.ZoneAllRequest"></a>
+<a name="flamefatex.example_api.v2.external.ExampleAllRequest"></a>
 
-### ZoneAllRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| type | [flamefatex.tc.ZoneType](#flamefatex.tc.ZoneType) |  |  |
-
-
-
-
-
-
-<a name="flamefatex.tcapi.v1.ZoneAllResponse"></a>
-
-### ZoneAllResponse
+### ExampleAllRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| data | [Zone](#flamefatex.tcapi.v1.Zone) | repeated |  |
+| type | [flamefatex.example.ExampleType](#flamefatex.example.ExampleType) |  |  |
+
+
+
+
+
+
+<a name="flamefatex.example_api.v2.external.ExampleAllResponse"></a>
+
+### ExampleAllResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| examples | [Example](#flamefatex.example_api.v2.external.Example) | repeated |  |
 
 
 
@@ -209,14 +311,14 @@
  
 
 
-<a name="flamefatex.tcapi.v1.ZoneService"></a>
+<a name="flamefatex.example_api.v2.external.ExampleService"></a>
 
-### ZoneService
+### ExampleService
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| All | [ZoneAllRequest](#flamefatex.tcapi.v1.ZoneAllRequest) | [ZoneAllResponse](#flamefatex.tcapi.v1.ZoneAllResponse) |  |
+| All | [ExampleAllRequest](#flamefatex.example_api.v2.external.ExampleAllRequest) | [ExampleAllResponse](#flamefatex.example_api.v2.external.ExampleAllResponse) |  |
 
  
 
