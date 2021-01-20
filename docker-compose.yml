@@ -1,0 +1,11 @@
+version: '3'
+services:
+  protos:
+    image: "swaggerapi/swagger-ui:latest"
+    restart: always
+    ports:
+      - "8888:8080"
+    volumes:
+      - .:/opt/protos
+    environment:
+      SWAGGER_JSON: /opt/protos/swagger/swagger.json
