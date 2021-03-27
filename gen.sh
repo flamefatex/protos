@@ -80,7 +80,6 @@ gen_doc() {
 }
 
 gen_mock() {
-  cd /go/src/github.com/flamefatex/protos/
   mkdir -p gooutmock
   for f in `find goout/* |grep ".pb.go"` ; do
     target_pb_file=${f:6}
