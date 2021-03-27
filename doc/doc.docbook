@@ -3,7 +3,7 @@
   <title>Protocol Documentation</title>
   
   <section>
-    <title>common/paging.proto</title>
+    <title>flamefatex/common/paging.proto</title>
     <para></para>
     
     <section id="flamefatex.common.Paging">
@@ -63,7 +63,7 @@
   </section>
   
   <section>
-    <title>example/example.proto</title>
+    <title>flamefatex/example/example.proto</title>
     <para></para>
     
     
@@ -115,7 +115,7 @@
   </section>
   
   <section>
-    <title>example-api/v2/example.proto</title>
+    <title>flamefatex/example-api/v2/example.proto</title>
     <para></para>
     
     <section id="flamefatex.example_api.v2.Example">
@@ -501,7 +501,7 @@
   </section>
   
   <section>
-    <title>example-api/v2/external/example.proto</title>
+    <title>flamefatex/example-api/v2/external/example.proto</title>
     <para></para>
     
     <section id="flamefatex.example_api.v2.external.Example">

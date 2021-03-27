@@ -31,25 +31,27 @@ gen_swagger() {
 }
 
 projects=(
-"example-api"
+"flamefatex/example-api"
 )
 
 
 gen_swagger_mixin() {
-  mkdir -p swagger_mixin
   for project in "${projects[@]}" ; do
-    target_dir=swagger/${project}
-    target_title_file=${target_dir}/title.json
+    swagger_src_dir=swagger/${project}
+    swagger_src_title_file=${swagger_src_dir}/title.json
 
-    files=`find ${target_dir}  -type f -name "*.json"`
-    cp swagger/title.json ${target_title_file}
+    swagger_target_dir=swagger_mixin/${project}
+    mkdir -p ${swagger_target_dir}
+
+    files=`find ${swagger_src_dir}  -type f -name "*.json"`
+    cp swagger/title.json ${swagger_src_title_file}
     if [ "$(uname)" == "Darwin" ]; then
-      sed -i ''  's~{project_name}~'"${project}"'~g' ${target_title_file}
+      sed -i ''  's~{project_name}~'"${project}"'~g' ${swagger_src_title_file}
     elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
       # GNU/Linux platform
-      sed -i  's~{project_name}~'"${project}"'~g' ${target_title_file}
+      sed -i  's~{project_name}~'"${project}"'~g' ${swagger_src_title_file}
     fi
-    docker run --rm -it -v `pwd`:/tmp/protos -w /tmp/protos 192.168.0.103:8080/tcgroup/goswagger:latest -q mixin ${target_dir}/title.json ${files} -o swagger_mixin/${project}.swagger.json || true
+    docker run --rm -it -v `pwd`:/tmp/protos -w /tmp/protos 192.168.0.103:8080/tcgroup/goswagger:latest -q mixin ${swagger_src_dir}/title.json ${files} -o ${swagger_target_dir}/swagger.json || true
   done ;
 }
 
@@ -59,34 +61,35 @@ gen_doc() {
   protoc -Isrc -I/usr/local/include -I$GOPATH/src \
   -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway \
   -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
-  --doc_out=./doc --doc_opt=markdown,doc.md src/*/*.proto src/*/*/*.proto src/*/*/*/*.proto
+  --doc_out=./doc --doc_opt=markdown,doc.md src/*/*/*.proto src/*/*/*/*.proto src/*/*/*/*/*.proto
 
   protoc -Isrc -I/usr/local/include -I$GOPATH/src \
   -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway \
   -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
-  --doc_out=./doc --doc_opt=html,doc.html src/*/*.proto src/*/*/*.proto src/*/*/*/*.proto
+  --doc_out=./doc --doc_opt=html,doc.html src/*/*/*.proto src/*/*/*/*.proto src/*/*/*/*/*.proto
 
   protoc -Isrc -I/usr/local/include -I$GOPATH/src \
   -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway \
   -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
-  --doc_out=./doc --doc_opt=json,doc.json src/*/*.proto src/*/*/*.proto src/*/*/*/*.proto
+  --doc_out=./doc --doc_opt=json,doc.json src/*/*/*.proto src/*/*/*/*.proto src/*/*/*/*/*.proto
 
   protoc -Isrc -I/usr/local/include -I$GOPATH/src \
   -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway \
   -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
-  --doc_out=./doc --doc_opt=docbook,doc.docbook src/*/*.proto src/*/*/*.proto src/*/*/*/*.proto
+  --doc_out=./doc --doc_opt=docbook,doc.docbook src/*/*/*.proto src/*/*/*/*.proto src/*/*/*/*/*.proto
 }
 
 gen_mock() {
-  for f in `find src |grep ".pb.go"` ; do
+  cd /go/src/github.com/flamefatex/protos/
+  mkdir -p gooutmock
+  for f in `find goout/* |grep ".pb.go"` ; do
+    target_pb_file=${f:6}
     services=$(cat $f |grep interface|grep -o "[A-Z].*Client")
-    filename=$(basename $f | cut -f 1 -d '.')
-    dirname=$(basename $(dirname $f));
-    savedirname="mock_${dirname}";
-    savefilename="mock_${filename}.go";
     if  [ $services ]; then
-      mockgen -destination=gooutmock/$savedirname/$savefilename  github.com/flamefatex/protos/goout/$dirname $services;
+      echo "mockgen -source=${f} -destination=gooutmock/${target_pb_file} $services"
+      mockgen -source=${f} -destination=gooutmock/${target_pb_file} $services
     fi;
+
   done ;
 }
 

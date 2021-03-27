@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "name": "common/paging.proto",
+      "name": "flamefatex/common/paging.proto",
       "description": "",
       "package": "flamefatex.common",
       "hasEnums": false,
@@ -56,7 +56,7 @@
       "services": []
     },
     {
-      "name": "example/example.proto",
+      "name": "flamefatex/example/example.proto",
       "description": "",
       "package": "flamefatex.example",
       "hasEnums": true,
@@ -93,7 +93,7 @@
       "services": []
     },
     {
-      "name": "example-api/v2/example.proto",
+      "name": "flamefatex/example-api/v2/example.proto",
       "description": "",
       "package": "flamefatex.example_api.v2",
       "hasEnums": false,
@@ -487,7 +487,7 @@
       ]
     },
     {
-      "name": "example-api/v2/external/example.proto",
+      "name": "flamefatex/example-api/v2/external/example.proto",
       "description": "",
       "package": "flamefatex.example_api.v2.external",
       "hasEnums": false,

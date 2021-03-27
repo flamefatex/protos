@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package flamefatex.common;
+option go_package = "github.com/flamefatex/protos/goout/flamefatex/common";
+
+// 分页
+message Paging {
+    int32 page = 1;
+    int32 page_size = 2;
+    int32 total = 3;
+}
